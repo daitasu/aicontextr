@@ -36,6 +36,8 @@ examples/
 3. **Generate AI context files:**
    ```bash
    npx @daitasu/aicontextr --config ./scripts/config.yaml
+   # or
+   npm run generate
    ```
 
 4. **Check the generated files:**
