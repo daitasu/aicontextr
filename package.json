@@ -2,15 +2,15 @@
   "name": "@daitasu/aicontextr",
   "version": "1.0.0",
   "description": "AI context file generator for MDC and CLAUDE.md files",
-  "main": "bin/aicontextr.js",
+  "main": "bin/index.js",
   "bin": {
-    "aicontextr": "bin/aicontextr.js"
+    "aicontextr": "bin/index.js"
   },
   "type": "module",
   "scripts": {
     "build": "tsc",
-    "dev": "tsc --watch",
-    "start": "node bin/aicontextr.js",
+    "watch": "tsc --watch",
+    "start": "node bin/index.js",
     "prepublishOnly": "pnpm run build"
   },
   "keywords": [
