@@ -1,0 +1,10 @@
+export const DEFAULT_CONFIG_FILE_NAME = 'config.yaml';
+export const DEFAULT_CONFIG_PATH = `scripts/${DEFAULT_CONFIG_FILE_NAME}`;
+export const YAML_HEADER_DELIMITER = '---';
+export const POSITIVE_INFINITY_FOR_SORT = Number.POSITIVE_INFINITY;
+export const NUMERIC_PREFIX_PATTERN = /^(\d+)_/;
+export const CURSOR_RULES_DIR_NAME = '.cursor/rules';
+export const CLAUDE_FILE_NAME = 'CLAUDE.md';
+export const MDC_FILE_EXTENSION = '*.mdc';
+export const MARKDOWN_FILE_EXTENSION = '*.md';
+export const REQUIRED_NODE_VERSION = '>=18.0.0';

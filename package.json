@@ -1,0 +1,40 @@
+{
+  "name": "@daitasu/aicontextr",
+  "version": "1.0.0",
+  "description": "AI context file generator for MDC and CLAUDE.md files",
+  "main": "bin/aicontextr.js",
+  "bin": {
+    "aicontextr": "bin/aicontextr.js"
+  },
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node bin/aicontextr.js",
+    "prepublishOnly": "pnpm run build"
+  },
+  "keywords": [
+    "ai",
+    "context",
+    "mdc",
+    "claude",
+    "cursor",
+    "cli"
+  ],
+  "author": "daitasu",
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^11.1.0",
+    "glob": "^10.3.10",
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.9",
+    "@types/node": "^20.10.4",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "packageManager": "pnpm@8.12.1"
+}
