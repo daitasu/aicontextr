@@ -33,26 +33,26 @@ const executeGeneration = async (configPath: string, verbose: boolean): Promise<
     const resolvedConfigPath = resolveConfigPath(configPath);
 
     if (!fs.existsSync(resolvedConfigPath)) {
-      console.error(`設定ファイルが見つかりません: ${resolvedConfigPath}`);
+      console.error(`Configuration file not found: ${resolvedConfigPath}`);
       process.exit(1);
     }
 
     if (verbose) {
-      console.log(`設定ファイルを読み込み中: ${resolvedConfigPath}`);
+      console.log(`Loading configuration file: ${resolvedConfigPath}`);
     }
 
     const config = loadConfigFromYaml(resolvedConfigPath);
     const { mdcConfigurations, claudeConfigurations } = config;
 
     if (verbose) {
-      console.log('既存のMDCファイルとCLAUDEファイルをクリア中...');
+      console.log('Clearing existing MDC and CLAUDE files...');
     }
 
     await clearMdcFiles(mdcConfigurations);
     await clearClaudeFiles(claudeConfigurations);
 
     if (verbose) {
-      console.log('MDCファイルを生成中...');
+      console.log('Generating MDC files...');
     }
 
     for (const mdcConfig of mdcConfigurations) {
@@ -60,7 +60,7 @@ const executeGeneration = async (configPath: string, verbose: boolean): Promise<
     }
 
     if (verbose) {
-      console.log('CLAUDEファイルを生成中...');
+      console.log('Generating CLAUDE files...');
     }
 
     for (const claudeConfig of claudeConfigurations) {

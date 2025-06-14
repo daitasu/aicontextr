@@ -49,8 +49,8 @@ mdcConfigurations:
   - output: ".cursor/rules/frontend.mdc"
     sourceDir: "docs/frontend/"
     header:
-      description: "フロントエンド開発に関するルールとアーキテクチャ"
-      globs: "apps/frontend/**/*.ts,apps/frontend/**/*.tsx"
+      description: "Frontend development rules and architecture guidelines"
+      globs: "src/**/*.ts,src/**/*.tsx,components/**/*.js"
       alwaysApply: false
     filePattern: "*.md"
     sortBy: "name"
@@ -60,10 +60,10 @@ mdcConfigurations:
 claudeConfigurations:
   - output: "CLAUDE.md"
     sections:
-      - title: "プロジェクト全体に適用される共通ルール"
+      - title: "Project-wide Common Rules"
         sourceDir: "docs/common/"
         filePattern: "*.md"
-      - title: "データベース設計"
+      - title: "Database Design"
         sourceDir: "docs/data/"
         filePattern: "*.md"
 ```

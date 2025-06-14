@@ -6,14 +6,14 @@ import type { ConfigFile } from '../types/config.js';
 export const loadConfigFromYaml = (configPath: string): ConfigFile => {
   try {
     const fileContents = fs.readFileSync(configPath, 'utf8');
-    // js-yamlのloadメソッドはanyを返すため、型アサーションが必要
+    // js-yaml load method returns any, so type assertion is required
     const config = yaml.load(fileContents) as ConfigFile;
 
     validateConfigFile(config);
 
     return config;
   } catch (error) {
-    throw new Error(`設定ファイルの読み込みに失敗しました: ${error}`);
+    throw new Error(`Failed to load configuration file: ${error}`);
   }
 };
 
@@ -23,10 +23,10 @@ export const resolveConfigPath = (configPath: string): string => {
 
 export const validateConfigFile = (config: ConfigFile): void => {
   if (!config.mdcConfigurations || !Array.isArray(config.mdcConfigurations)) {
-    throw new Error('設定ファイルにmdcConfigurations配列が見つかりません');
+    throw new Error('mdcConfigurations array not found in configuration file');
   }
 
   if (!config.claudeConfigurations || !Array.isArray(config.claudeConfigurations)) {
-    throw new Error('設定ファイルにclaudeConfigurations配列が見つかりません');
+    throw new Error('claudeConfigurations array not found in configuration file');
   }
 };
