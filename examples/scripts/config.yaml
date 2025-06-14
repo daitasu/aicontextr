@@ -1,0 +1,30 @@
+mdcConfigurations:
+  - output: ".cursor/rules/frontend.mdc"
+    sourceDir: "docs/frontend/"
+    header:
+      description: "Frontend development rules and architecture guidelines"
+      globs: "src/**/*.ts,src/**/*.tsx,src/**/*.js,src/**/*.jsx"
+      alwaysApply: false
+    filePattern: "*.md"
+    sortBy: "name"
+  
+  - output: ".cursor/rules/backend.mdc"
+    sourceDir: "docs/backend/"
+    header:
+      description: "Backend API development rules and best practices"
+      globs: "api/**/*.ts,server/**/*.js,routes/**/*.ts"
+      alwaysApply: false
+    filePattern: "*.md"
+    sortBy: "name"
+
+claudeConfigurations:
+  - output: "CLAUDE.md"
+    sections:
+      - title: "Frontend Development Guidelines"
+        sourceDir: "docs/frontend/"
+        filePattern: "*.md"
+        description: "React and TypeScript frontend development standards"
+      - title: "Backend Development Guidelines"
+        sourceDir: "docs/backend/"
+        filePattern: "*.md"
+        description: "Node.js and API development standards"

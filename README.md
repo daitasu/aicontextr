@@ -22,6 +22,17 @@ aicontextr --config ./scripts/config.yaml
 npx @daitasu/aicontextr --config ./scripts/config.yaml
 ```
 
+### Try it out
+
+To see the tool in action, check out the working example in the `examples/` directory:
+
+```bash
+cd examples
+npx @daitasu/aicontextr --config ./scripts/config.yaml
+```
+
+This will generate sample MDC and CLAUDE.md files so you can see exactly how the tool works.
+
 ### Options
 
 - `-c, --config <path>`: Path to config file (default: `scripts/config.yaml`)

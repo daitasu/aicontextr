@@ -1,0 +1,23 @@
+{
+  "name": "@daitasu/aicontextr-example",
+  "version": "1.0.0",
+  "description": "Example usage of @daitasu/aicontextr",
+  "private": true,
+  "scripts": {
+    "generate": "npx @daitasu/aicontextr --config ./scripts/config.yaml",
+    "generate:verbose": "npx @daitasu/aicontextr --config ./scripts/config.yaml --verbose",
+    "clean": "rm -rf .cursor CLAUDE.md"
+  },
+  "keywords": [
+    "aicontextr",
+    "example",
+    "mdc",
+    "claude",
+    "cursor"
+  ],
+  "author": "daitasu",
+  "license": "MIT",
+  "devDependencies": {
+    "@daitasu/aicontextr": "^1.0.0"
+  }
+}
