@@ -17,14 +17,28 @@
   },
   "keywords": [
     "ai",
-    "context",
-    "mdc",
     "claude",
     "cursor",
-    "cli"
+    "documentation"
   ],
-  "author": "daitasu",
+  "files": [
+    "bin/",
+    "README.md",
+    "LICENSE"
+  ],
+  "author": {
+    "name": "daitasu",
+    "url": "https://github.com/daitasu"
+  },
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/daitasu/aicontextr.git"
+  },
+  "homepage": "https://github.com/daitasu/aicontextr#readme",
+  "bugs": {
+    "url": "https://github.com/daitasu/aicontextr/issues"
+  },
   "dependencies": {
     "commander": "^11.1.0",
     "glob": "^10.3.10",
