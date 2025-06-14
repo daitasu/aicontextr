@@ -31,12 +31,11 @@ cd examples
 npx @daitasu/aicontextr --config ./scripts/config.yaml
 ```
 
-This will generate sample MDC and CLAUDE.md files so you can see exactly how the tool works.
+This will generate sample *.mdc and CLAUDE.md files so you can see exactly how the tool works.
 
 ### Options
 
 - `-c, --config <path>`: Path to config file (default: `scripts/config.yaml`)
-- `-v, --verbose`: Enable verbose logging
 - `-h, --help`: Display help information
 - `-V, --version`: Display version number
 
@@ -53,7 +52,6 @@ mdcConfigurations:
       globs: "src/**/*.ts,src/**/*.tsx,components/**/*.js"
       alwaysApply: false
     filePattern: "*.md"
-    sortBy: "name"
     subDirectories:
       - "apps/frontend/"
 
@@ -79,7 +77,6 @@ claudeConfigurations:
   - `globs`: File patterns to apply rules to
   - `alwaysApply`: Whether to always apply the rules
 - `filePattern`: Pattern to match source files (e.g., "*.md")
-- `sortBy`: Sorting method (currently supports "name")
 - `subDirectories`: Optional list of subdirectories to copy the MDC file to
 
 #### claudeConfigurations
@@ -98,7 +95,6 @@ claudeConfigurations:
 - **Sub-directory Support**: Automatically copy MDC files to specified subdirectories
 - **YAML Front Matter**: Automatic generation of YAML headers for MDC files
 - **File Cleaning**: Clears existing files before regeneration
-- **Verbose Logging**: Optional detailed logging with `--verbose` flag
 
 ## File Structure
 

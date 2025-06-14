@@ -5,7 +5,6 @@
   "private": true,
   "scripts": {
     "generate": "npx @daitasu/aicontextr --config ./scripts/config.yaml",
-    "generate:verbose": "npx @daitasu/aicontextr --config ./scripts/config.yaml --verbose",
     "clean": "rm -rf .cursor CLAUDE.md"
   },
   "keywords": [

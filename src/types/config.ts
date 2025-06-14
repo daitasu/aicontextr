@@ -10,7 +10,6 @@ export type MdcConfig = {
   readonly sourceDir: string;
   readonly header: MdcHeader;
   readonly filePattern: string;
-  readonly sortBy: string;
   readonly subDirectories?: string[];
 };
 

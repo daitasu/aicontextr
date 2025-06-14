@@ -11,9 +11,9 @@ import {
 } from './utils/fileBuilder.js';
 import { DEFAULT_CONFIG_PATH } from './constants/index.js';
 
-const program = new Command();
+const cmd = new Command();
 
-program
+cmd
   .name('aicontextr')
   .description('AI context file generator for MDC and CLAUDE.md files')
   .version('1.0.0')
@@ -21,14 +21,9 @@ program
     '-c, --config <path>',
     'Path to config file',
     DEFAULT_CONFIG_PATH
-  )
-  .option(
-    '-v, --verbose',
-    'Enable verbose logging',
-    false
   );
 
-const executeGeneration = async (configPath: string, verbose: boolean): Promise<void> => {
+const executeGeneration = async (configPath: string): Promise<void> => {
   try {
     const resolvedConfigPath = resolveConfigPath(configPath);
 
@@ -37,30 +32,14 @@ const executeGeneration = async (configPath: string, verbose: boolean): Promise<
       process.exit(1);
     }
 
-    if (verbose) {
-      console.log(`Loading configuration file: ${resolvedConfigPath}`);
-    }
-
     const config = loadConfigFromYaml(resolvedConfigPath);
     const { mdcConfigurations, claudeConfigurations } = config;
-
-    if (verbose) {
-      console.log('Clearing existing MDC and CLAUDE files...');
-    }
 
     await clearMdcFiles(mdcConfigurations);
     await clearClaudeFiles(claudeConfigurations);
 
-    if (verbose) {
-      console.log('Generating MDC files...');
-    }
-
     for (const mdcConfig of mdcConfigurations) {
       await buildMdcFilesWithSubDirectories(mdcConfig);
-    }
-
-    if (verbose) {
-      console.log('Generating CLAUDE files...');
     }
 
     for (const claudeConfig of claudeConfigurations) {
@@ -74,8 +53,8 @@ const executeGeneration = async (configPath: string, verbose: boolean): Promise<
   }
 };
 
-program.action(async (options) => {
-  await executeGeneration(options.config, options.verbose);
+cmd.action(async (options) => {
+  await executeGeneration(options.config);
 });
 
-program.parse(process.argv);
+cmd.parse(process.argv);
