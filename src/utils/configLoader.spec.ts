@@ -18,7 +18,7 @@ describe('configLoader', () => {
     });
 
     it('should throw when mdcConfigurations is missing', () => {
-      const invalidConfig = { claudeConfigurations: [] } as ConfigFile;
+      const invalidConfig = { claudeConfigurations: [] } as unknown as ConfigFile;
       expect(() => validateConfigFile(invalidConfig)).toThrow('mdcConfigurations array not found');
     });
   });
