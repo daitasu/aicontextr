@@ -1,6 +1,6 @@
 {
   "name": "@daitasu/aicontextr",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "AI context file generator for MDC and CLAUDE.md files",
   "main": "bin/index.js",
   "bin": {
@@ -11,6 +11,8 @@
     "build": "tsc",
     "watch": "tsc --watch",
     "start": "node bin/index.js",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
     "prepublishOnly": "pnpm run build"
   },
   "keywords": [
@@ -31,7 +33,9 @@
   "devDependencies": {
     "@types/js-yaml": "^4.0.9",
     "@types/node": "^20.10.4",
-    "typescript": "^5.3.3"
+    "@vitest/coverage-v8": "^1.0.4",
+    "typescript": "^5.3.3",
+    "vitest": "^1.0.4"
   },
   "engines": {
     "node": ">=18.0.0"
