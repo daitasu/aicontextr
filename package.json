@@ -1,6 +1,6 @@
 {
   "name": "@daitasu/aicontextr",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "AI context file generator for MDC and CLAUDE.md files",
   "main": "bin/index.js",
   "bin": {
