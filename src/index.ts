@@ -16,7 +16,7 @@ const cmd = new Command();
 cmd
   .name('aicontextr')
   .description('AI context file generator for MDC and CLAUDE.md files')
-  .version('1.0.0')
+  .version('0.0.2')
   .option(
     '-c, --config <path>',
     'Path to config file',
